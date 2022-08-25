@@ -13,7 +13,7 @@ const multiply = (num1, num2, callback) => callback(num1 * num2);
 // CHECK YOUR ANSWER
 
 multiply(4, 3, (answer) => {
-	console.log("The answer is " + answer); //should console.log 12
+	// console.log("The answer is " + answer); //should console.log 12
 });
 
 ////////// PROBLEMS 2 - 6 //////////
@@ -40,7 +40,7 @@ const first = (arr, callbackName) => callbackName(arr[0]);
 // CHECK YOUR ANSWER
 
 first(names, (firstName) => {
-	console.log("The first name in names is " + firstName);
+	// console.log("The first name in names is " + firstName);
 });
 
 ////////// PROBLEM 3 //////////
@@ -60,7 +60,7 @@ const last = (array, callbackName) => callbackName(array[array.length - 1]);
 // CHECK YOUR ANSWER
 
 last(names, (lastName) => {
-	console.log("The last name in names is " + lastName);
+	// console.log("The last name in names is " + lastName);
 });
 
 ////////// PROBLEM 4 //////////
@@ -88,9 +88,9 @@ const contains = (array, name, callback) => {
 
 contains(names, "Colt", (result) => {
 	if (result === true) {
-		console.log("Colt is in the array");
+		// console.log("Colt is in the array");
 	} else {
-		console.log("Colt is not in the array");
+		// console.log("Colt is not in the array");
 	}
 });
 
@@ -125,7 +125,7 @@ const uniq = (array, callback) => {
 
 // CODE HERE
 
-uniq(names, (uniqArr) => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`));
+// uniq(names, (uniqArr) => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`));
 
 ////////// PROBLEM 6 //////////
 
@@ -135,6 +135,7 @@ uniq(names, (uniqArr) => console.log(`The new names array with all the duplicate
 */
 
 // CODE HERE
+const each = (array, callback) => array.forEach((element, i) => callback(element, i));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -144,6 +145,8 @@ uniq(names, (uniqArr) => console.log(`The new names array with all the duplicate
 */
 
 // CODE HERE
+
+// each(names, (item, index) => console.log(`The item at index ${index} is ${item}`));
 
 ////////// PROBLEM 7 //////////
 
@@ -176,14 +179,28 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE
+const getUserById = (arrUsers, id, callback) => {
+	for (i = 0; i < arrUsers.length; i++) {
+		if (arrUsers[i].id === id) {
+			return callback(arrUsers[i]);
+		}
+	}
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address)
-// })
+getUserById(users, "16t", (user) => {
+	console.log(
+		"The user with the id 16t has the email of " +
+			user.email +
+			" the name of " +
+			user.name +
+			" and the address of " +
+			user.address
+	);
+});
 
 ////////// CHALLENGE //////////
 
