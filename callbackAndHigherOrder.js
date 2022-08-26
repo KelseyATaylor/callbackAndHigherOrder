@@ -226,6 +226,14 @@ function addingFactory(number1) {
 	};
 }
 
+//const addingFactory = (x) => (y) => x + y;
+// OR //
+//const addingFactory = x => {
+//   return function(y) {
+//     return x + y
+//   }
+// }
+
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
@@ -266,6 +274,6 @@ console.log(addTen(8));
 */
 
 // CODE HERE
-const addThirteen = addTen(13);
+const addThirteen = addingFactory(13);
 
-console.log(addThirteen);
+console.log(addThirteen(13));
