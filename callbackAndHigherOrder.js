@@ -219,6 +219,12 @@ getUserById(users, "16t", (user) => {
 */
 
 // CODE HERE
+function addingFactory(number1) {
+	return function (number2) {
+		const sum = number1 + number2;
+		return sum;
+	};
+}
 
 /*
   Now that you have addingFactory, you can create other
@@ -233,6 +239,7 @@ getUserById(users, "16t", (user) => {
 */
 
 // CODE HERE
+const addTen = addingFactory(10);
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -245,6 +252,7 @@ getUserById(users, "16t", (user) => {
 */
 
 // CODE HERE
+console.log(addTen(8));
 
 /*
   Let's make another function from the addingFactory. 
@@ -258,3 +266,6 @@ getUserById(users, "16t", (user) => {
 */
 
 // CODE HERE
+const addThirteen = addTen(13);
+
+console.log(addThirteen);
